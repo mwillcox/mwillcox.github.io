@@ -1,0 +1,407 @@
+@font-face {
+    font-family: 'mat-icons';
+    src:url('../fonts/icons/mat-icons.eot?5t5svp');
+    src:url('../fonts/icons/mat-icons.eot?#iefix5t5svp') format('embedded-opentype'),
+        url('../fonts/icons/mat-icons.ttf?5t5svp') format('truetype'),
+        url('../fonts/icons/mat-icons.woff?5t5svp') format('woff'),
+        url('../fonts/icons/mat-icons.svg?5t5svp#mat-icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+$icons: (
+    close: "\e609",
+    logo: "\e60a",
+    mail: "\e60b",
+    menu: "\e60c",
+    next: "\e60d",
+    phone: "\e60e",
+    plus: "\e60f",
+    previous: "\e610",
+    scale: "\e600",
+    share: "\e612"
+);
+
+$main-icon-size: 40px;
+$share-icon-size: 40px;
+
+// For adding font icons to elements using CSS pseudo-elements
+@mixin icon-cta($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: block;
+            -webkit-transition: all .12s ease-in-out;
+            transition: all .12s ease-in-out;
+            color: inherit;
+            display: block;
+            margin-bottom: 30px;
+            font-size: $icon-size;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+                transform: scale(1.15);
+                -webkit-transform: scale(1.15);
+            }
+        }
+    }
+    display: inline-block;
+    margin: 80px 50px 0 50px;
+}
+
+@mixin icon-general($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: $main-icon-size;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+                transform: scale(1.25);
+                -webkit-transform: scale(1.25);
+            }
+        }
+    }
+}
+
+@mixin icon-general--inactive($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: $main-icon-size;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $inactive-pagination;
+        }
+        @content;
+    }
+}
+@mixin icon-close($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: 33px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+                transform: scale(1.25);
+                -webkit-transform: scale(1.25);
+            }
+        }
+    }
+}
+@mixin icon-contact($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: 50px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+            }
+        }
+    }
+}
+@mixin icon-about($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: 40px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+            }
+        }
+    }
+}
+@mixin icon-logo($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: 40px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+                transform: scale(1.1);
+                -webkit-transform: scale(1.1);
+            }
+        }
+    }
+}
+
+@mixin icon-nav($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+            font-size: $small-p-size;
+            @include breakpoint(tablet){
+                font-size: $mobile-p-size; 
+            }
+            @include breakpoint(desktop){
+                font-size: $desktop-p-size;
+            }
+        }
+        @content;
+    }
+    &:hover{
+        &:#{$position} {
+            @if $styles {
+                color: $text;
+            }
+        }
+    }
+}
+
+@mixin icon-team($position: before, $icon: false, $styles: true) {
+    @if $position == both {
+        $position: 'before, &:after';
+    }
+    // Either a :before or :after pseudo-element, or both, defaulting to :before
+    &:#{$position} {
+        @if $icon {
+            content: "#{map-get($icons, $icon)}";
+        }
+        @if $styles {
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-family: 'mat-icons';
+            -webkit-transition: all .25s ease-in-out;
+            transition: all .25s ease-in-out;
+            color: inherit;
+            display: inline-block;
+            font-size: 30px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: $text;
+        }
+        @content;
+    }
+}
+.icon-close-icon:before {
+    content: "\e609";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+.icon-logo-icon:before {
+    content: "\e60a";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+}
+.icon-mail-icon:before {
+    content: "\e60b";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+}
+.icon-menu-icon:before {
+    content: "\e60c";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-next-icon:before {
+    content: "\e60d";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-phone-icon:before {
+    content: "\e60e";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-plus-icon:before {
+    content: "\e60f";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-previous-icon:before {
+    content: "\e610";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-scale-icon:before {
+    content: "\e600";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.icon-share-icon:before {
+    content: "\e612";
+    font-family: 'mat-icons';
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

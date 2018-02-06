@@ -1,0 +1,370 @@
+@font-face {
+    font-family: 'Millar-Medium';
+    src: url('../fonts/Millar-Medium.eot');
+    src: url('../fonts/Millar-Medium.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Millar-Medium.woff2') format('woff2'),
+         url('../fonts/Millar-Medium.woff') format('woff'),
+         url('../fonts/Millar-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Millar';
+    src: url('../fonts/Millar-Regular.eot');
+    src: url('../fonts/Millar-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Millar-Regular.woff2') format('woff2'),
+         url('../fonts/Millar-Regular.woff') format('woff'),
+         url('../fonts/Millar-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@mixin Millar-Medium{
+    font-family: 'Millar-Medium', "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-weight: normal;
+}
+
+@mixin Millar{
+    font-family: 'Millar', "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-weight: normal;
+}
+
+/*********************
+H1
+*********************/
+
+$desktop-h1-size: 47px;
+$desktop-h1-leading: 73px;
+$desktop-h1-letter-spacing:  .025em; // px value / 1000
+$desktop-h1-line-height: percentage($desktop-h1-leading/$desktop-h1-size);
+
+$tablet-h1-size: 42px;
+$tablet-h1-leading: 73px;
+$tablet-h1-letter-spacing:  .025em; // px value / 1000
+$tablet-h1-line-height: percentage($tablet-h1-leading/$tablet-h1-size);
+
+$mobile-h1-size: 31px;
+$mobile-h1-leading: 43px;
+$mobile-h1-letter-spacing:  .025em; // px value / 1000
+$mobile-h1-line-height: percentage($mobile-h1-leading/$mobile-h1-size);
+
+
+h1{
+    @include Millar;
+    margin: 0;
+    font-size: $mobile-h1-size;
+    letter-spacing: $mobile-h1-letter-spacing;
+    line-height: $mobile-h1-line-height;
+    @include breakpoint(tablet) {
+        font-size: $tablet-h1-size;
+        letter-spacing: $tablet-h1-letter-spacing;
+        line-height: $tablet-h1-line-height;
+    }
+    @include breakpoint(desktop) {
+        font-size: $desktop-h1-size;
+        letter-spacing: $desktop-h1-letter-spacing;
+        line-height: $desktop-h1-line-height;
+    }
+    p{  //for when kirby text puts a p inside an h1
+        @extend h1;
+    }
+    a{  //for when kirby text puts an anchor inside an h1
+        @extend h1;
+    }
+}
+
+/*********************
+H2
+*********************/
+
+$desktop-h2-size: 21px;
+$desktop-h2-leading: 30px;
+$desktop-h2-letter-spacing:  .025em; 
+$desktop-h2-line-height: percentage($desktop-h2-leading/$desktop-h2-size);
+
+$tablet-h2-size: 21px;
+$tablet-h2-leading: 30px;
+$tablet-h2-letter-spacing:  .025em;
+$tablet-h2-line-height: percentage($tablet-h2-leading/$tablet-h2-size);
+
+$mobile-h2-size: 31px;
+$mobile-h2-leading: 43px;
+$mobile-h2-letter-spacing:  .025em; // px value / 1000
+$mobile-h2-line-height: percentage($mobile-h2-leading/$mobile-h2-size);
+
+
+
+h2{
+    @include Millar;
+    margin: 0;
+    font-size: $mobile-h2-size;
+    letter-spacing: $mobile-h2-letter-spacing;
+    line-height: $mobile-h2-line-height;
+    @include breakpoint(tablet) {
+        font-size: $tablet-h2-size;
+        letter-spacing: $tablet-h2-letter-spacing;
+        line-height: $tablet-h2-line-height;
+    }
+    @include breakpoint(desktop) {
+        font-size: $desktop-h2-size;
+        letter-spacing: $desktop-h2-letter-spacing;
+        line-height: $desktop-h2-line-height;
+    }
+}
+
+/*********************
+H3
+*********************/
+
+$desktop-h3-size: 11px;
+$desktop-h3-leading: 24px;
+$desktop-h3-letter-spacing:  .22em; 
+$desktop-h3-line-height: percentage($desktop-h3-leading/$desktop-h3-size);
+
+$tablet-h3-size: 11px;
+$tablet-h3-leading: 24px;
+$tablet-h3-letter-spacing:  .22em;
+$tablet-h3-line-height: percentage($tablet-h3-leading/$tablet-h3-size);
+
+$mobile-h3-size: 12px;
+$mobile-h3-leading: 33px;
+$mobile-h3-letter-spacing:  .22em;
+$mobile-h3-line-height: percentage($mobile-h3-leading/$mobile-h3-size);
+
+
+
+h3{
+    @include Millar-Medium;
+    margin: 0;
+    text-transform: uppercase;
+    font-size: $mobile-h3-size;
+    letter-spacing: $mobile-h3-letter-spacing;
+    line-height: $mobile-h3-line-height;
+    @include breakpoint(tablet) {
+        font-size: $tablet-h3-size;
+        letter-spacing: $tablet-h3-letter-spacing;
+        line-height: $tablet-h3-line-height;
+    }
+    @include breakpoint(desktop) {
+        font-size: $desktop-h3-size;
+        letter-spacing: $desktop-h3-letter-spacing;
+        line-height: $desktop-h3-line-height;
+    }
+    p{  //for when kirby text puts a p inside an h3
+        @extend h3;
+    }
+    a{  //for when kirby text puts an anchor inside an h3
+        @extend h3;
+    }
+}
+
+
+
+/*********************
+PARAGRAPH
+*********************/
+
+$desktop-p-size: 21px;
+$desktop-p-leading: 30px;
+$desktop-p-letter-spacing:  .025em; 
+$desktop-p-line-height: percentage($desktop-p-leading/$desktop-p-size);
+
+$tablet-p-size: 21px;
+$tablet-p-leading: 30px;
+$tablet-p-letter-spacing:  .025em;
+$tablet-p-line-height: percentage($tablet-p-leading/$tablet-p-size);
+
+$mobile-p-size: 18px;
+$mobile-p-leading: 25px;
+$mobile-p-letter-spacing:  .025em;
+$mobile-p-line-height: percentage($mobile-p-leading/$mobile-p-size);
+
+
+
+p{
+    @include Millar;
+    margin: 0;
+    font-size: $mobile-p-size;
+    letter-spacing: $mobile-p-letter-spacing;
+    line-height: $mobile-p-line-height;
+    @include breakpoint(tablet) {
+        font-size: $tablet-p-size;
+        letter-spacing: $tablet-p-letter-spacing;
+        line-height: $tablet-p-line-height;
+    }
+    @include breakpoint(desktop) {
+        font-size: $desktop-p-size;
+        letter-spacing: $desktop-p-letter-spacing;
+        line-height: $desktop-p-line-height;
+    }
+    a{  //for when kirby text puts an anchor inside an p
+        @extend p;
+    }
+}
+
+/*********************
+ANCHOR
+*********************/
+
+a,
+button{
+    font-family: inherit;
+    text-decoration: none;
+    transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+    cursor: pointer;
+}
+
+button[disabled=disabled], 
+button:disabled {
+   transition: none;
+    color: $dark-text;
+    cursor: not-allowed;
+    &:hover{
+        color: $dark-text;
+    }
+}
+
+
+a:visited{
+    color: inherit;
+}
+
+a:hover{
+    transition: all .25s ease-in-out;
+    -webkit-transition: all .25s ease-in-out;
+}
+
+a:active{
+    color: inherit;
+}
+
+/*********************
+ANCHOR
+*********************/
+
+input{
+    border: none;
+    @extend h1;
+    outline: 0;
+}
+.small-input{
+    @extend p;
+    margin-top: 60px;
+}
+
+/*********************
+RELATIONSHIPS
+*********************/
+
+h1 + p{
+    margin-top: 31px;
+    @include breakpoint(tablet) {
+        margin-top: 33px;
+    }
+    @include breakpoint(desktop) {
+        margin-top: 33px;
+    }
+}
+
+
+/*********************
+HEADLINES (CLASSES)
+*********************/
+
+
+//these are all H1
+.headline--a{
+    color: $text;
+    a{
+        text-decoration: none;
+        color: $light-link;
+        &:hover{
+            color: $dark-link;
+        }
+    }
+}
+
+.headline--b{
+    color: $white;
+    a{
+        text-decoration: none;
+        color: $dark-link;
+        &:hover{
+            color: $text;
+        }
+    }
+}
+
+//this is an h2
+.sub-headline--a{
+    color: $text;
+}
+
+//this is an h3
+.sub-headline--b{
+    color: $info-text;
+    a{
+        color: $info-text;
+        border-bottom: 1px solid $info-text;
+        &:hover{
+            color: $dark-link;
+            border-bottom: 1px solid $dark-link;
+        }
+    }
+}
+
+/*********************
+PARAGRAPH (CLASSES)
+*********************/
+
+.paragraph--a{
+    color: $text;
+    a{
+        color: $light-link;
+        &:hover{
+            color: $dark-link;
+        }
+    }
+}
+
+.paragraph--b{
+    color: $dark-text;
+    a{
+        color: $dark-link;
+        &:hover{
+            color: $white;
+        }
+    }
+}
+
+
+/*********************
+NAV CLASSES
+*********************/
+
+.nav--a{
+    @extend h2;
+    color: $text;
+}
+
+.nav--b{
+    @extend h2;
+    color: $text;
+    &:hover{
+        color: $light-link;
+    }
+}
+
+/*********************
+WOW JS 
+*********************/
+
+
+.js .wow {
+    visibility: hidden;
+}
+

@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+// colors
+$white: #ffffff; //white baseline
+$text: #444444; // site background (dark), footer color, and most body text (on a light background)
+$light-link: #c2c2c2; // link colors when on the light backgrounds
+$light-text: #a1a1a1; // light body text
+$info-text: #afafaf; // info text color on project pages
+$dark-link: #777777; // link colors when on the dark backgrounds
+$dark-text: #c6c6c6; // text colors on the dark background
+
+
+
+//icons
+$icon-backward-icon: "\e600";
+$icon-play-icon: "\e601";
+$icon-down-icon: "\e602";
+$icon-forward-icon: "\e603";
+$icon-confirm-icon: "\e604";
+$icon-close-icon: "\e605";
+$icon-menu-icon: "\e606";
+
+//z index
+$z-base: 0;
+$z-alpha: 10;
+$z-beta: 20;
+$z-gamma: 30;
+$z-delta: 40;
+$z-epsilon: 50;
+
+/*********************
+BODY
+*********************/
+
+$site-max-width: 1440px;
+$desktop-spacing: 65px;
+$tablet-spacing: 55px;
+$mobile-spacing: 20px;
+
+/*********************
+HEADER
+*********************/
+
+$header-spacing: 107px;
+
+/*********************
+NAVIGATION
+*********************/
+
+//hanglines correspond to big, floating text areas, as well as content that is at the top of the page
+
+$desktop-hangline--a: 135px;
+$desktop-hangline--b: 135px;
+
+$tablet-hangline--a: 100px;
+$tablet-hangline--b: 100px;
+
+$mobile-hangline--a: 80px;
+$mobile-hangline--b: 34px;
+
+/*********************
+HANGLINES
+*********************/
+
+$desktop-nav-hangline: 60px;
+$tablet-nav-hangline: 60px;
+$mobile-nav-hangline: 46px;
+
+
+/*********************
+HOME / PROJECTS
+*********************/
+
+$desktop-project-spacing: 22px; //44 split
+$tablet-project-spacing: 22px; //44 split
+$mobile-project-spacing: 25px;
+
+/*********************
+FOOTER
+*********************/
+
+$desktop-footer-height: 430px;
+$tablet-footer-height: 430px;
+$mobile-footer-height: 230px;
+
+$desktop-footer-bottom-padding: 75px;
+$tablet-footer-bottom-padding: 75px;
+$mobile-footer-bottom-padding: 43px;
+
+
+/*********************
+GRIDS
+*********************/
+
+$home-grid: 1055px;
+$more-grid: 985px;
+$project-grid: 965px;
